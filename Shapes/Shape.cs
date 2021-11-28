@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Figures.Styles;
@@ -7,7 +8,6 @@ namespace Figures.Shapes
 {
     abstract class Shape
     {
-
         public Size ShapeSize { get; set; }
         protected IStyle Style { get; set; }
         public Shape(IStyle style, Size size)
@@ -24,6 +24,7 @@ namespace Figures.Shapes
             Console.WriteLine(text.ToUpper());
             Console.WriteLine();
         }
+
         public enum Size
         {
             Small = 20,
