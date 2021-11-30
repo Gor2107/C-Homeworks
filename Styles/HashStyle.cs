@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Figures.Styles
 {
-    class HashStyle : IStyle
+    class HashStyle : IStyleable
     {
         public ConsoleColor Color { get; set; }
         public char Tool { get; } = (char)35;

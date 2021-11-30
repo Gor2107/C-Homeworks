@@ -7,7 +7,7 @@ namespace Figures.Shapes.Rectangles
 {
     class Rectangle : Shape
     {
-        public Rectangle(IStyle style, Size size) :base( style,  size) {}
+        public Rectangle(IStyleable style, Size size) :base( style,  size) {}
         public override void Draw()
         {
             ConsoleColor defaultcolor = Console.ForegroundColor;

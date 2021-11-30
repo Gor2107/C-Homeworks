@@ -8,7 +8,7 @@ namespace Figures.Shapes.Lines
     class Arrow : Shape
     {
         public ArrowDirection Direction { get; set; } 
-        public Arrow(IStyle style, Size size, ArrowDirection direction = ArrowDirection.Left) : base(style, size)
+        public Arrow(IStyleable style, Size size, ArrowDirection direction = ArrowDirection.Left) : base(style, size)
         {
             Direction = direction;
         }

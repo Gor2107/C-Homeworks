@@ -9,8 +9,8 @@ namespace Figures.Shapes
     abstract class Shape
     {
         public Size ShapeSize { get; set; }
-        protected IStyle Style { get; set; }
-        public Shape(IStyle style, Size size)
+        protected IStyleable Style { get; set; }
+        public Shape(IStyleable style, Size size)
         {
             Style = style;
             ShapeSize = size;

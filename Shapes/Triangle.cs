@@ -7,7 +7,7 @@ namespace Figures.Shapes
 {
     class Triangle : Shape
     {
-        public Triangle(IStyle style, Size size) : base(style, size) { }
+        public Triangle(IStyleable style, Size size) : base(style, size) { }
         public override void Draw()
         {
             int j = 1;

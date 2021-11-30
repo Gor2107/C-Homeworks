@@ -7,7 +7,7 @@ namespace Figures.Shapes.Rectangles
 {
     class Square:Shape
     {
-        public Square(IStyle style, Size size) : base(style, size) { }
+        public Square(IStyleable style, Size size) : base(style, size) { }
         public override void Draw()
         {
             ConsoleColor defaultcolor = Console.ForegroundColor;

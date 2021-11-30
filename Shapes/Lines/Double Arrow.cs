@@ -7,7 +7,7 @@ namespace Figures.Shapes.Lines
 {
     class Double_Arrow : Shape
     {
-        public Double_Arrow(IStyle style, Size size) : base(style, size)
+        public Double_Arrow(IStyleable style, Size size) : base(style, size)
         { }
 
         public override void Draw()

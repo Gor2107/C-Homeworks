@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Figures.Styles
 {
-    class SmileyStyle : IStyle
+    class SmileyStyle : IStyleable
     {
         public ConsoleColor Color { get; set; }
         public char Tool { get; } = (char)2;

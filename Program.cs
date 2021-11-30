@@ -88,7 +88,7 @@ namespace Figures
         {
             string text;
         begin_color_choose:
-            Console.WriteLine("Choose shape size from list below");
+            Console.WriteLine("Choose shape color from list below");
 Console.WriteLine(@"Black = 0,
 DarkBlue = 1,
 DarkGreen = 2,
@@ -119,11 +119,37 @@ White = 15");
                 goto begin_color_choose;
             }
         }
+
+        public static int ChooseStyleNumber()
+        {
+            string text;
+        begin_style_choose:
+            Console.WriteLine("Choose shape style from list below");
+            Console.WriteLine("\t\t\tType \"exit\"-to exit application");
+            Console.WriteLine($"1-Hash Style");
+            Console.WriteLine($"2-Snow Style");
+            Console.WriteLine($"3-Smiley Style");
+            text = Console.ReadLine();
+            if (text.ToLower() == "exit") return -1;
+           bool isParsed = int.TryParse(text, out int styleNumber);
+            if (isParsed && styleNumber > 0 && styleNumber < 4)
+            {
+                return styleNumber;
+            }
+            else
+            {
+                Console.WriteLine("You have chosen incorrect style number, please try again or type exit to exit.");
+                goto begin_style_choose;
+            }
+        }
+
+
         public static void Paint()
         {
             while (true)
             {
                 Shape tmp = default;
+                IStyleable tmpStyle = default;
                 Color color;
                 Size shapeSize;
                 int shapeId= ChooseShape();
@@ -134,7 +160,15 @@ White = 15");
                 int colorNumber = ChooseShapeColor();
                 if (colorNumber == -1) return;
                 color=(Color)colorNumber;
-                IStyle tmpStyle = new HashStyle(color);
+                int styleNumber = ChooseStyleNumber();
+                if (styleNumber == -1) return;
+                switch (styleNumber)
+                {
+                    case 1: tmpStyle = new HashStyle(color); break;
+                    case 2: tmpStyle = new SnowStyle(color); break;
+                    case 3: tmpStyle = new SmileyStyle(color); break;
+                }
+
                 switch (shapeId)
                 {
                     case 1: tmp = new Triangle(tmpStyle, shapeSize); break;

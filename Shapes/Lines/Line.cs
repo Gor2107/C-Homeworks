@@ -7,7 +7,7 @@ namespace Figures.Shapes.Lines
 {
     class Line : Shape
     {
-        public Line(IStyle style, Size size) : base(style, size) { }
+        public Line(IStyleable style, Size size) : base(style, size) { }
         public override void Draw()
         {
             ConsoleColor defaultcolor = Console.ForegroundColor;
